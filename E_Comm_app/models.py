@@ -23,7 +23,7 @@ class Slider(models.Model):
     )
 
     Product_Image = models.ImageField(upload_to="photos")
-    Product_Image_dark = models.ImageField(upload_to="photos",null=True)
+    Product_Image_dark = models.ImageField(upload_to="photos", null=True)
     Discount_deals = models.CharField(max_length=150, choices=Discount_deals)
     Sale = models.IntegerField()
     Brand_Name = models.CharField(max_length=100)
@@ -32,10 +32,14 @@ class Slider(models.Model):
 
     def product_photo(self):
         return mark_safe('<img src="{}" width="100"/>'.format(self.Product_Image.url))
-    
-    def product_photo_dark(self):
-        return mark_safe('<img src="{}" width="100"/>'.format(self.Product_Image_dark.url))
 
+    def product_photo_dark(self):
+        return mark_safe(
+            '<img src="{}" width="100"/>'.format(self.Product_Image_dark.url)
+        )
+
+    def __str__(self):
+        return self.Brand_Name
 
 
 class user(models.Model):
@@ -48,3 +52,34 @@ class user(models.Model):
 
 # class details(models.Model)
 #     address,gender,dob,dp
+
+
+class Main_Category(models.Model):
+    Main_Category_Name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.Main_Category_Name
+
+
+class Category(models.Model):
+    Main_Category = models.ForeignKey(Main_Category, on_delete=models.CASCADE)
+    Category_Name = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.Category_Name + " -- " + self.Main_Category.Main_Category_Name
+
+
+class Sub_Category(models.Model):
+    Category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    Sub_Category_Name = models.CharField(max_length=150, null=True)
+
+    def __str__(self):
+        return self.Sub_Category_Name+" -- "+self.Category.Category_Name
+
+
+class Product_model(models.Model):
+    Sub_category = models.ForeignKey(Sub_Category, on_delete=models.CASCADE)
+    Product_Model_Name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.Product_Model_Name
