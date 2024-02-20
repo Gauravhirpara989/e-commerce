@@ -23,9 +23,6 @@ class User(models.Model):
         return mark_safe('<img src="{}" width="100"/>'.format(self.User_Image.url))
 
 
-
-
-
 class Slider(models.Model):
     Discount_deals = (
         (
@@ -116,9 +113,14 @@ class Product(models.Model):
 
 
 class Cart(models.Model):
+
+    cart_status = (("0", "Confirm"), ("1", "Pending"))
+
     User_Id = models.ForeignKey(User, on_delete=models.CASCADE)
     Product_Id = models.ForeignKey(Product, on_delete=models.CASCADE)
     Cart_Quantity = models.IntegerField()
+    Total_Amount = models.FloatField(null=True)
+    Cart_Status = models.CharField(max_length=20, choices=cart_status,null=True)
 
 
 class Order(models.Model):

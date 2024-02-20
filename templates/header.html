@@ -843,7 +843,7 @@ RIGHT SIDEBAR TOGGLE SECTION
 													<img src="" class="card-img-top" alt="">
 												</div>
 										</div>
-										<select class="form-control" name="role">
+										<select class="form-control" name="role" required>
 											<option selected>Gender</option>
 											<option value="1">Male</option>
 											<option value="2">Female</option>
@@ -905,21 +905,25 @@ RIGHT SIDEBAR TOGGLE SECTION
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
+						{% for m_cat in m_category %}
 						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">
-								Electronics
+								{{m_cat.Main_Category_Name}}
 							</a>
+							{% for cat in m_cat.category_set.all%}
 							<div class="dropdown-menu">
 								<div class="agile_inner_drop_nav_info p-4">
-									<h5 class="mb-3">Mobiles, Computers</h5>
+									<h5 class="mb-3">{{cat.Category_Name}}</h5>
 									<div class="row">
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
+												{% for sub_cat in cat.s_category_set.all %}
 												<li>
-													<a href="/product">All Mobile Phones</a>
+													<a href="/product">{{sub_cat.Sub_Category_Name}}</a>
 												</li>
-												<li>
+												{% endfor %}
+												{% comment %} <li>
 													<a href="/product">All Mobile Accessories</a>
 												</li>
 												<li>
@@ -942,10 +946,11 @@ RIGHT SIDEBAR TOGGLE SECTION
 												</li>
 												<li>
 													<a href="/product">Smart Home</a>
-												</li>
+												</li> {% endcomment %}
 											</ul>
 										</div>
-										<div class="col-sm-6 multi-gd-img">
+							{% endfor %}
+										{% comment %} <div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
 												<li>
 													<a href="/product">Laptops</a>
@@ -973,8 +978,9 @@ RIGHT SIDEBAR TOGGLE SECTION
 									</div>
 								</div>
 							</div>
-						</li>
-						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+						</li> {% endcomment %}
+						{% endfor %}
+						{% comment %} <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">
 								Appliances
@@ -1048,7 +1054,7 @@ RIGHT SIDEBAR TOGGLE SECTION
 									</div>
 								</div>
 							</div>
-						</li>
+						</li> {% endcomment %}
 						<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link" href="/about">About Us</a>
 						</li>
@@ -1086,10 +1092,8 @@ RIGHT SIDEBAR TOGGLE SECTION
 
 
 
-
-
-
-{% comment %} <!--
+{% comment "" %}
+<!-- 
 Author: W3layouts
 Author URL: http://w3layouts.com
 -->
@@ -1842,7 +1846,7 @@ RIGHT SIDEBAR TOGGLE SECTION
 							</div>
 							<div class="form-group">
 								<select class="form-control" name="role">
-									<option selected>Choose Role</option>
+									<option selected disabled>Choose Role</option>
 									<option value="1">User</option>
 									<option value="2">Vendor</option>
 								</select>
@@ -2380,5 +2384,7 @@ RIGHT SIDEBAR TOGGLE SECTION
 		</div>
 		</nav>
 		</div>
-		</div>
-		<!-- //navigation --> {% endcomment %}
+		</div> -->
+		<!-- //navigation --> 
+
+		{% endcomment %}

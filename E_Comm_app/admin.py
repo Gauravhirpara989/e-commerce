@@ -86,7 +86,7 @@ admin.site.register(Product, Product_info)
 
 
 class Cart_info(admin.ModelAdmin):
-    list_display = ["User_Id", "Product_Id", "Cart_Quantity"]
+    list_display = ["User_Id", "Product_Id", "Cart_Quantity","Total_Amount","Cart_Status"]
 
 
 admin.site.register(Cart, Cart_info)
