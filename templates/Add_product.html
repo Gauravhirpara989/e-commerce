@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Products</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1 class="text-center">Add Product</h1>
+    <div class="container d-flex flex-column align-items-center">
+        <form action="/add_product" method="post" class="w-75">
+            <div class="form-group my-2">
+                <label for="exampleInputEmail1">Product Name</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="">
+            </div>
+            <div class="form-group my-4">
+                <label for="exampleFormControlTextarea1 my-2">Product Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" cols="10"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Product Image</label>
+                <input class="form-control" type="file" id="formFile" accept="image/*">
+            </div>
+            <div class="form-outline">
+                <label class="form-label" for="typeNumber">Product Quantity</label>
+                <input type="number" id="typeNumber" class="form-control" />
+            </div>
+            <div class="form-outline">
+                <label class="form-label" for="typeNumber">Product Price</label>
+                <input type="number" id="typeNumber" class="form-control" />
+            </div>
+            <select class="form-select my-3" aria-label="Default select example">
+                <option selected disabled>Product Status</option>
+                <option value="1">Available</option>
+                <option value="2">Not Available</option>
+            </select>
+            <select class="form-select my-3" aria-label="Default select example">
+                <option selected disabled>Product Main Category</option>
+                <option value="1">Available</option>
+                <option value="2">Not Available</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

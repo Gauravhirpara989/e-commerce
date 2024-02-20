@@ -1,17 +1,23 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
 
 # Create your views here.
 
 
 def home(request):
-    slider = Slider.objects.all()
+    # slider = Slider.objects.all()
 
-    context = {"slider": slider}
-    print(slider)
+    # context = {"slider": slider}
+    # print(slider)
+
+    main_category = Main_Category.objects.all()
+    category = Category.objects.all()
+    sub_category = Sub_Category.objects.all()
+
+    context = {"m_category": main_category, 
+               "cat": category, "s_category": sub_category
+               }
     return render(request, "index.html", context)
 
 
@@ -21,7 +27,7 @@ def register(request):
         password = request.POST.get("Password")
         name = request.POST.get("Name")
         role = request.POST.get("role")
-        user_info = user(Email_id=email, Password=password, Name=name, Role=role)
+        user_info = User(Email_id=email, Password=password, Name=name, Role=role)
         user_info.save()
         messages.success(request, "Registration Successfully")
         return redirect(home)
@@ -34,7 +40,7 @@ def check_login(request):
     email = request.POST["Email"]
     password = request.POST["Password"]
     try:
-        query = user.objects.get(Email_id=email, Password=password)
+        query = User.objects.get(Email_id=email, Password=password)
         request.session["u_email"] = query.Email_id
         request.session["u_id"] = query.id
     except User.DoesNotExist:
@@ -51,9 +57,14 @@ def logout(request):
     try:
         del request.session["u_email"]
         del request.session["u_id"]
+
+        messages.success(request,"Logout Successfully")
     except:
         pass
     return redirect(home)
+
+def Add_product(request):
+    return render(request,"Add_product.html")
 
 
 def about(request):
