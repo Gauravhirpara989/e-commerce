@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Main Category</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body class="px-5">
+    <h2 class="text-center py-4">Add Main Category</h2>
+    <form action="/m_cat" method="post">{% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Main Category" name="m-cat" required="">
+        </div>
+        <div class="right-w3l">
+            <input type="submit" class="form-control h-3" value="Submit">
+        </div>
+    </form>
+    <div class="right-w3l">
+        <button class="btn btn-style text-light"><a href="/cat">Add Category</a></button>
+    </div>
+</body>
+
+</html>

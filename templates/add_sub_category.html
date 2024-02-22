@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Main Category</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+    <h2 class="text-center py-2">Add Category</h2>
+    <form action="/cat" method="post">{% csrf_token %}
+        <div class="form-group">
+            <select class="form-control" name="product-status">
+                <option selected disabled>Category</option>
+                <option value="Avilable">Available</option>
+                <option value="Unavailable">Unavailable</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Category" name="cat" required="">
+        </div>
+        <div class="right-w3l">
+            <input type="submit" class="form-control" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>

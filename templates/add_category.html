@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Main Category</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body class="px-5">
+    <h2 class="text-center py-4">Add Category</h2>
+    <form action="/cat" method="post">{% csrf_token %}
+        <div class="form-group">
+            <select class="form-control" name="m-cat">
+                <option selected disabled>Main Category</option>
+                {% for m_cat in m_cat %}
+                <option value="Avilable">{{m_cat.Main_Category_Name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Category" name="cat" required="">
+        </div>
+        <div class="right-w3l">
+            <input type="submit" class="form-control" value="Submit">
+        </div>
+    </form>
+    <div class="d-flex gap-2">
+        <div class="right-w3l">
+            <button class="btn btn-style text-light mx-2"><a href="/m_cat">Add Main Category</a></button>
+        </div>
+        <div class="right-w3l">
+            <button class="btn btn-style text-light mx-2"><a href="/sub_cat">Add Sub Category</a></button>
+        </div>
+    </div>
+</body>
+
+</html>

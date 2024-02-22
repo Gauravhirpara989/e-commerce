@@ -103,13 +103,21 @@ class Product(models.Model):
     Sub_Category = models.ForeignKey(Sub_Category, on_delete=models.CASCADE)
     Product_Name = models.CharField(max_length=300)
     Product_Description = models.TextField(null=True)
-    Product_Image = models.ImageField(upload_to="photos")
+    Product_Image_1 = models.ImageField(upload_to="photos",null=True)
+    Product_Image_2 = models.ImageField(upload_to="photos",null=True)
+    Product_Image_3 = models.ImageField(upload_to="photos",null=True)
     Product_Quantity = models.IntegerField()
     Product_Price = models.IntegerField()
     Product_Status = models.CharField(max_length=20)
 
-    def Product_Photo(self):
-        return mark_safe('<img src="{}" width="100"/>'.format(self.Product_Image.url))
+    def Product_Photo_1(self):
+        return mark_safe('<img src="{}" width="100"/>'.format(self.Product_Image_1.url))
+    
+    def Product_Photo_2(self):
+        return mark_safe('<img src="{}" width="100"/>'.format(self.Product_Image_2.url))
+    
+    def Product_Photo_3(self):
+        return mark_safe('<img src="{}" width="100"/>'.format(self.Product_Image_3.url))
 
 
 class Cart(models.Model):

@@ -1,51 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Products</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-</head>
-
-<body>
-    <h1 class="text-center">Add Product</h1>
-    <div class="container d-flex flex-column align-items-center">
-        <form action="/add_product" method="post" class="w-75">
-            <div class="form-group my-2">
-                <label for="exampleInputEmail1">Product Name</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="">
-            </div>
-            <div class="form-group my-4">
-                <label for="exampleFormControlTextarea1 my-2">Product Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" cols="10"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="formFile" class="form-label">Product Image</label>
-                <input class="form-control" type="file" id="formFile" accept="image/*">
-            </div>
-            <div class="form-outline">
-                <label class="form-label" for="typeNumber">Product Quantity</label>
-                <input type="number" id="typeNumber" class="form-control" />
-            </div>
-            <div class="form-outline">
-                <label class="form-label" for="typeNumber">Product Price</label>
-                <input type="number" id="typeNumber" class="form-control" />
-            </div>
-            <select class="form-select my-3" aria-label="Default select example">
-                <option selected disabled>Product Status</option>
-                <option value="1">Available</option>
-                <option value="2">Not Available</option>
-            </select>
-            <select class="form-select my-3" aria-label="Default select example">
-                <option selected disabled>Product Main Category</option>
-                <option value="1">Available</option>
-                <option value="2">Not Available</option>
-            </select>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+{% block content %}
+  <!-- banner-2 -->
+  <div class="page-head_agile_info_w3l inner-contact-page">
+    <div class="container py-5">
+      <h3 class="title-style text-white pt-5">Contact with <span>Us</span></h3>
+      <ul class="w3_short pt-3 pb-5">
+        <li>
+          <a href="/" class="text-white">Home</a>
+          <i class="fa fa-angle-right mx-2 text-white" aria-hidden="true"></i>
+        </li>
+        <li class="text-light">Contact Us</li>
+      </ul>
     </div>
-</body>
-
-</html>
+  </div>
+  <!-- //banner-2 -->
+  <!-- page -->
+  <div class="services-breadcrumb">
+    <div class="agile_inner_breadcrumb"></div>
+  </div>
+  <!-- //page -->
+  <div style="margin: 8px auto; display: block; text-align:center;">
+    <!-- -728x90--- -->
+     -->
+  </div>
+  <!-- contact page -->
+  <section class="w3l-contact py-5" id="contact">
+    <div class="container py-md-5 py-4">
+      <div class="mx-auto pt-lg-4 pt-md-5 pt-4" style="max-width:1000px">
+        <div class="contact-block">
+          <div class="col-md-7 contact-right mt-md-0 mt-4" style="max-width: 1000px;">
+            <form action="/add_product" method="post" class="signin-form">
+              {% csrf_token %}
+              <div class="information-wrapper">
+                <select name="" id="" class="contact-input">
+                  <option value="">Available</option>
+                </select>
+              </div>
+              <div class="input-grids">
+                <input type="text" name="product-name" id="w3lName" placeholder="Product Name" class="contact-input" required="" />
+              </div>
+              <div class="form-input">
+                <textarea name="product-description" id="w3lMessage" placeholder="Product Description" required="" rows="30"></textarea>
+              </div>
+              <div class="input-grids">
+                <input type="number" name="product-price" id="w3lName" placeholder="Product Price" class="contact-input" required="" />
+              </div>
+              <div class="input-grids">
+                <input type="number" name="product-quantiyt" id="w3lName" placeholder="Product Qauntity" class="contact-input" required="" />
+              </div>
+              <div class="information-wrapper">
+                <select name="product-status" id="" class="contact-input">
+                  <option value="" selected disabled>Product Status</option>
+                  <option value="">Available</option>
+                  <option value="">Unavailable</option>
+                </select>
+              </div>
+              <button class="btn btn-style">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
