@@ -794,7 +794,7 @@ h3.title-main:after {
 }
 
 .carousel-item.item4 {
-    background:var(--banner-4);
+    background: var(--banner-4);
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -4929,9 +4929,20 @@ ul.twitter-feed a:hover {
 #label {
     text-align: left !important;
 }
-.logout{
+
+.logout {
     font-weight: 600;
 }
-.signout{
+
+.signout {
     transform: rotateY(180deg);
+}
+
+.product-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.overflow{
+    overflow: hidden;
 }

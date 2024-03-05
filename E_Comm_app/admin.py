@@ -81,6 +81,7 @@ class Product_info(admin.ModelAdmin):
         "Product_Quantity",
         "Product_Price",
         "Product_Status",
+        "Product_Offers"
     ]
 
 

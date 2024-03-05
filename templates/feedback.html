@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
   <!-- banner-2 -->
   <div class="page-head_agile_info_w3l inner-contact-page">
@@ -21,25 +20,20 @@
   </div>
   <!-- //page -->
   <div style="margin: 8px auto; display: block; text-align:center;">
-    <!-- -728x90 -->
+    <!-- 728x90 -->
   </div>
   <!-- contact page -->
   <section class="w3l-contact py-5" id="contact">
-    <h1 class="text-center font-weight-bold">Add Main Category</h1>
-    <div class="container py-md-5 py-4">
-      <div class="mx-auto pt-lg-4 pt-md-5 pt-4" style="max-width:1000px">
-        <div class="contact-block">
-          <div class="col-md-7 contact-right mt-md-0 mt-4" style="max-width: 1000px;">
-            <form action="/m_cat" method="post" class="signin-form">
-              {% csrf_token %}
-              <div class="input-grids">
-                <input type="text" name="m-cat" id="w3lName" placeholder="Enter Main Category" class="contact-input" required="" />
-              </div>
-              <button class="btn btn-style">Save</button>
-            </form>
-          </div>
-        </div>
+    <div class="container py-md-5 py-4" style="max-width: 800px;">
+      <div class="d-flex align-items-center flex-column">
+        <h1 class="">FeedBack</h1>
+        <input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5" data-step="1" />
+      </div>
+      <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Give Your Feedback"></textarea>
+      <div class="d-flex align-items-center flex-column">
+        <input type="submit" value="Submit" class="btn btn-style my-3" />
       </div>
     </div>
   </section>
+  <!-- map -->
 {% endblock %}
