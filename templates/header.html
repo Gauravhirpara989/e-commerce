@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
 	
 	
+	
 	<!-- menu style -->
 	<!-- //Custom-Files -->
 
@@ -35,6 +36,10 @@
 	<link
 		href="http://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
 		rel="stylesheet">
+
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
 
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -259,12 +264,12 @@ RIGHT SIDEBAR TOGGLE SECTION
 							</li>
 							{% if request.session.u_id %}
 							<li class="mx-3">
-								<a href="/logout" class="">
+								<a href="/logout" class="login-out">
 									<i class="fas fa-sign-out-alt signout"></i> Log Out </a>
 							</li>
 							{% else %}
 							<li class="mx-3">
-								<a href="#login" data-toggle="modal" data-target="#login" class="">
+								<a href="#login" data-toggle="modal" data-target="#login" class="log-in">
 									<i class="fas fa-sign-in-alt mr-1"></i> Log In </a>
 							</li>
 							{% endif %}
