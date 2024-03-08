@@ -439,21 +439,21 @@
 
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
-    $(document).ready(function () {
-        /*
-            var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear' 
-            };
-        */
+	$(document).ready(function () {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+			};
+		*/
 
-        $().UItoTop({
-            easingType: 'easeOutQuart'
-        });
+		$().UItoTop({
+			easingType: 'easeOutQuart'
+		});
 
-    });
+	});
 </script>
 <!-- //here ends scrolling icon -->
 <!-- js -->
@@ -463,51 +463,51 @@
 <script type="text/javascript" src="/static/js/move-top.js"></script>
 <script type="text/javascript" src="/static/js/easing.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
-        });
-    });
+	jQuery(document).ready(function ($) {
+		$(".scroll").click(function (event) {
+			event.preventDefault();
+			$('html,body').animate({
+				scrollTop: $(this.hash).offset().top
+			}, 1000);
+		});
+	});
 </script>
 <!-- start-smoth-scrolling -->
 
 <!-- nav smooth scroll -->
 <script>
-    $(document).ready(function () {
-        $(".dropdown").hover(
-            function () {
-                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
-                $(this).toggleClass('open');
-            },
-            function () {
-                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
-                $(this).toggleClass('open');
-            }
-        );
-    });
+	$(document).ready(function () {
+		$(".dropdown").hover(
+			function () {
+				$('.dropdown-menu', this).stop(true, true).slideDown("fast");
+				$(this).toggleClass('open');
+			},
+			function () {
+				$('.dropdown-menu', this).stop(true, true).slideUp("fast");
+				$(this).toggleClass('open');
+			}
+		);
+	});
 </script>
 <!-- //nav smooth scroll -->
 
 <!-- popup modal (for location)-->
 <script src="/static/js/jquery.magnific-popup.js"></script>
 <script>
-    $(document).ready(function () {
-        $('.popup-with-zoom-anim').magnificPopup({
-            type: 'inline',
-            fixedContentPos: false,
-            fixedBgPos: true,
-            overflowY: 'auto',
-            closeBtnInside: true,
-            preloader: false,
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-zoom-in'
-        });
+	$(document).ready(function () {
+		$('.popup-with-zoom-anim').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+		});
 
-    });
+	});
 </script>
 <!-- //popup modal (for location)-->
 
@@ -518,159 +518,97 @@
 <!-- cart-js -->
 <script src="/static/js/minicart.js"></script>
 <script>
-    paypals.minicarts
-        .render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
+	paypals.minicarts
+		.render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
 
-    paypals.minicarts.cart.on('checkout', function (evt) {
-        var items = this.items(),
-            len = items.length,
-            total = 0,
-            i;
+	paypals.minicarts.cart.on('checkout', function (evt) {
+		var items = this.items(),
+			len = items.length,
+			total = 0,
+			i;
 
-        // Count the number of each item in the cart
-        for (i = 0; i < len; i++) {
-            total += items[i].get('quantity');
-        }
+		// Count the number of each item in the cart
+		for (i = 0; i < len; i++) {
+			total += items[i].get('quantity');
+		}
 
-        if (total < 3) {
-            alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-            evt.preventDefault();
-        }
-    });
+		if (total < 3) {
+			alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+			evt.preventDefault();
+		}
+	});
 </script>
 <!-- //cart-js -->
 
 <!-- password-script -->
 <script>
-    window.onload = function () {
-        document.getElementById("password1").onchange = validatePassword;
-        document.getElementById("password2").onchange = validatePassword;
-    }
+	window.onload = function () {
+		document.getElementById("password1").onchange = validatePassword;
+		document.getElementById("password2").onchange = validatePassword;
+	}
 
-    function validatePassword() {
-        var pass2 = document.getElementById("password2").value;
-        var pass1 = document.getElementById("password1").value;
-        if (pass1 != pass2)
-            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-        else
-            document.getElementById("password2").setCustomValidity('');
-        //empty string means no validation error
-    }
+	function validatePassword() {
+		var pass2 = document.getElementById("password2").value;
+		var pass1 = document.getElementById("password1").value;
+		if (pass1 != pass2)
+			document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+		else
+			document.getElementById("password2").setCustomValidity('');
+		//empty string means no validation error
+	}
 </script>
-<!-- quantity -->
-<script>
-    $('.value-plus').on('click', function () {
-        var divUpd = $(this).parent().find('.value'),
-            newVal = parseInt(divUpd.text(), 10) + 1;
-        divUpd.text(newVal);
-    });
-
-    $('.value-minus').on('click', function () {
-        var divUpd = $(this).parent().find('.value'),
-            newVal = parseInt(divUpd.text(), 10) - 1;
-        if (newVal >= 1) divUpd.text(newVal);
-    });
-</script>
-<!--quantity-->
-<script>
-    $(document).ready(function (c) {
-        $('.close1').on('click', function (c) {
-            $('.rem1').fadeOut('slow', function (c) {
-                $('.rem1').remove();
-            });
-        });
-    });
-</script>
-<script>
-    $(document).ready(function (c) {
-        $('.close2').on('click', function (c) {
-            $('.rem2').fadeOut('slow', function (c) {
-                $('.rem2').remove();
-            });
-        });
-    });
-</script>
-<script>
-    $(document).ready(function (c) {
-        $('.close3').on('click', function (c) {
-            $('.rem3').fadeOut('slow', function (c) {
-                $('.rem3').remove();
-            });
-        });
-    });
-</script>
-<!-- //quantity -->
 <!-- //password-script -->
-
-<!-- imagezoom -->
-<script src="/static/js/imagezoom.js"></script>
-<!-- //imagezoom -->
-
-<!-- flexslider -->
-<script src="/static/js/jquery.flexslider.js"></script>
-<script>
-    // Can also be used with $(document).ready()
-    $(window).load(function () {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            controlNav: "thumbnails"
-        });
-    });
-</script>
-<!-- //FlexSlider-->
 
 <!-- theme switch js (light and dark)-->
 <script src="/static/js/theme-change.js"></script>
 <script>
-    function autoType(elementClass, typingSpeed) {
-        var thhis = $(elementClass);
-        thhis.css({
-            "position": "relative",
-            "display": "inline-block"
-        });
-        thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
-        thhis = thhis.find(".text-js");
-        var text = thhis.text().trim().split('');
-        var amntOfChars = text.length;
-        var newString = "";
-        thhis.text("|");
-        setTimeout(function () {
-            thhis.css("opacity", 1);
-            thhis.prev().removeAttr("style");
-            thhis.text("");
-            for (var i = 0; i < amntOfChars; i++) {
-                (function (i, char) {
-                    setTimeout(function () {
-                        newString += char;
-                        thhis.text(newString);
-                    }, i * typingSpeed);
-                })(i + 1, text[i]);
-            }
-        }, 1500);
-    }
+	function autoType(elementClass, typingSpeed) {
+		var thhis = $(elementClass);
+		thhis.css({
+			"position": "relative",
+			"display": "inline-block"
+		});
+		thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+		thhis = thhis.find(".text-js");
+		var text = thhis.text().trim().split('');
+		var amntOfChars = text.length;
+		var newString = "";
+		thhis.text("|");
+		setTimeout(function () {
+			thhis.css("opacity", 1);
+			thhis.prev().removeAttr("style");
+			thhis.text("");
+			for (var i = 0; i < amntOfChars; i++) {
+				(function (i, char) {
+					setTimeout(function () {
+						newString += char;
+						thhis.text(newString);
+					}, i * typingSpeed);
+				})(i + 1, text[i]);
+			}
+		}, 1500);
+	}
 
-    $(document).ready(function () {
-        // Now to start autoTyping just call the autoType function with the 
-        // class of outer div
-        // The second paramter is the speed between each letter is typed.   
-        autoType(".type-js", 200);
-    });
+	$(document).ready(function () {
+		// Now to start autoTyping just call the autoType function with the 
+		// class of outer div
+		// The second paramter is the speed between each letter is typed.   
+		autoType(".type-js", 200);
+	});
 </script>
 <!-- //theme switch js (light and dark)-->
 
 <!-- disable body scroll which navbar is in active -->
 <script>
-    $(function () {
-        $('.navbar-toggler').click(function () {
-            $('body').toggleClass('noscroll');
-        })
-    });
+	$(function () {
+		$('.navbar-toggler').click(function () {
+			$('body').toggleClass('noscroll');
+		})
+	});
 </script>
 <!-- //disable body scroll which navbar is in active -->
 <!--bootstrap-->
 <script src="/static/js/bootstrap.min.js"></script>
-
-
 <!-- //bootstrap-->
 <!-- //Js scripts -->
 
@@ -681,3 +619,4 @@
 <!-- Mirrored from p.w3layouts.com/demos_new/template_demo/11-06-2021/electronics-mart-liberty-demo_Free/1081434887/web/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Dec 2023 09:12:40 GMT -->
 
 </html>
+

@@ -23,9 +23,7 @@ urlpatterns = [
     path('privacy/',views.privacy),
     path('product/',views.product),
     path('product_2/',views.product_2),
-    path('single/<int:pid>',views.single),
+    path('single/',views.single),
     path('single_2',views.single_2),
-    path('terms/',views.terms),
-    path('feedback',views.feedback),
-    path('add_to_cart',views.addtocart)
+    path('terms/',views.terms)
 ]

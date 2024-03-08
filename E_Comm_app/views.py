@@ -15,9 +15,7 @@ def home(request):
     category = Category.objects.all()
     sub_category = Sub_Category.objects.all()
 
-    fetch_product = Product.objects.all()
-
-    context = {"m_category": main_category, "cat": category, "s_category": sub_category,"Product_data":fetch_product}
+    context = {"m_category": main_category, "cat": category, "s_category": sub_category}
     return render(request, "index.html", context)
 
 
@@ -62,7 +60,6 @@ def check_login(request):
         messages.info(request, "Account does not exist!! Please sign in")
 
 
-
 def logout(request):
     try:
         del request.session["u_email"]
@@ -79,25 +76,19 @@ def add_main_cat(request):
         add_main_cat = request.POST.get("m-cat")
         m_cat_info = Main_Category(Main_Category_Name=add_main_cat)
         m_cat_info.save()
-        return redirect(add_cat)
     return render(request, "add_main_category.html")
 
 
 def add_cat(request):
-    main_cat = Main_Category.objects.all()
+    main_category = Main_Category.objects.all()
 
     if request.method == "POST":
-        category_name = request.POST.get("cat")
-        main_category_name = request.POST.get("main-cat")
-        
-        # Retrieve the Main_Category instance
-        main_category_instance = Main_Category.objects.get(Main_Category_Name=main_category_name)
-        
-        # Create and save the Category instance associated with the Main_Category
-        cat_info = Category(Category_Name=category_name, Main_Category=main_category_instance)
+        category = request.POST.get("cat")
+        # main_category = request.POST.get("m-cat")
+        cat_info = Category(Category_Name=category)
         cat_info.save()
 
-    context = {"m_cat": main_cat}
+    context = {"m_cat": main_category}
     return render(request, "add_category.html", context)
 
 
@@ -119,10 +110,7 @@ def Add_product(request):
         product_query = ()
     return render(request, "Add_product.html")
 
-def addtocart(request):
-    login_id=request.session["u_id"]
-    Product_id=request.POST.get("")
-    return redirect()
+
 def about(request):
     return render(request, "about.html")
 
@@ -140,8 +128,6 @@ def checkout(request):
 
 
 def contact(request):
-    login_id=request.session['u_id']
-    product_id=request.POST.get
     return render(request, "contact.html")
 
 
@@ -173,9 +159,8 @@ def product_2(request):
     return render(request, "product2.html")
 
 
-def single(request,pid):
-    fetch_product_details=Product.objects.get(id=pid)
-    return render(request, "single.html",{"Product_data":fetch_product_details})
+def single(request):
+    return render(request, "single.html")
 
 
 def single_2(request):
@@ -184,6 +169,3 @@ def single_2(request):
 
 def terms(request):
     return render(request, "terms.html")
-
-def feedback(request):
-    return render(request, 'feedback.html')

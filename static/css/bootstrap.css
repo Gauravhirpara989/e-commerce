@@ -4,7 +4,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -10897,7 +10897,7 @@ a.text-dark:focus {
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+    content: " ("attr(title) ")";
   }
 
   pre {
@@ -10980,91 +10980,4 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-}
-
-.rating-md {
-  font-size: 3.13em;
-}
-
-.rating-container .clear-rating {
-  color: #aaa;
-  cursor: not-allowed;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 60%;
-  padding-right: 5px;
-}
-
-.rating-container .rating-stars {
-  position: relative;
-  cursor: pointer;
-  vertical-align: middle;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.rating-container .empty-stars {
-    color: #aaa;
-}
-.rating-container .star {
-  display: inline-block;
-  margin: 0 3px;
-  text-align: center;
-}
-.rating-container .rating-input {
-  position: absolute;
-  cursor: pointer;
-  width: 100%;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  font-size: 1px;
-  border: none;
-  background: 0 0;
-  padding: 0;
-  margin: 0;
-}
-.rating-container .caption {
-  color: #999;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 60%;
-  margin-top: -0.6em;
-  margin-left: 5px;
-  margin-right: 0;
-}
-.label {
-  display: inline;
-  padding: 0.2em 0.6em 0.3em;
-  font-size: 75%;
-  font-weight: bold;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 0.25em;
-}
-.label-default {
-  background-color: #777;
-}
-.filled-stars{
-  width: 0%;
-}
-.glyphicon {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-}
-.glyphicon-minus-sign:before {
-  content: "\e082";
-}
-.glyphicon-star-empty:before {
-  content: "\e007";
 }

@@ -362,24 +362,24 @@
 					<!-- first section -->
 					<div class="product-sec1 px-lg-4">
 						<div class="row">
-							{% for product in Product_data %}
 							<div class="col-md-4 product-men">
-								<div class="men-pro-item simpleCart_shelfItem overflow">
+								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item text-center">
-										<img src="media/{{product.Product_Image_1}}" alt="" class="img-fluid">
+										<img src="/static/images/m1.png" alt="" class="img-fluid">
 										<div class="men-cart-pro">
 											<div class="inner-men-cart-pro">
-												<a href="/single/{{product.id}}" class="link-product-add-cart">Quick
+												<a href="/single" class="link-product-add-cart">Quick
 													View</a>
 											</div>
 										</div>
 									</div>
 									<div class="item-info-product text-center mt-2">
 										<h4 class="pt-1">
-											<a href="/single/{{product.id}}" class="product-name">{{product.Product_Name}}</a>
+											<a href="/single">Redmi 9 Prime</a>
 										</h4>
 										<div class="info-product-price">
-											<span class="item_price">{{product.Product_Price}} Rs</span>
+											<span class="item_price">$200.00</span>
+											<del>$280.00</del>
 										</div>
 										<div
 											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -402,7 +402,221 @@
 									</div>
 								</div>
 							</div>
-							{% endfor %}
+							<div class="col-md-4 product-men mt-md-0 mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/m2.png" alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single_2" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+										<span class="product-new-top">New</span>
+
+									</div>
+									
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single_2">Refrigerator </a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$230.00</span>
+											<del>$250.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Refrigerator " />
+													<input type="hidden" name="amount" value="230.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 product-men mt-md-0 mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/m3.png" alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+										<span class="product-new-top">New</span>
+
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single">Apple iPhone 11</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$280.00</span>
+											<del>$300.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Apple iPhone X" />
+													<input type="hidden" name="amount" value="280.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //first section -->
+					<!-- second section -->
+					<div class="product-sec1 px-lg-4 mb-5">
+						<div class="row">
+							<div class="col-md-4 product-men mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/m4.png" alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single_2" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+										<span class="product-new-top">New</span>
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single_2">Mi 4A Horizon</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$320.00</span>
+											<del>$340.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Mi 4A Horizon" />
+													<input type="hidden" name="amount" value="320.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 product-men mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/m6.png" alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single">Smart AC with Wi-fi</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$349.00</span>
+											<del>$399.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Smart AC with Wi-fi" />
+													<input type="hidden" name="amount" value="349.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 product-men mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/m5.png" alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single">Microwave Oven</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$249.00</span>
+											<del>$300.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Microwave Oven" />
+													<input type="hidden" name="amount" value="249.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<!-- //second section -->
 					<!-- third section -->
 					<div class="px-lg-4 my-5">
@@ -416,6 +630,265 @@
 							</div>
 						</div>
 					</div>
+					<!-- //third section -->
+					<!-- fourth section -->
+					<div class="product-sec1 px-lg-4 mt-md-0 mt-5">
+						<div class="row">
+							<div class="col-md-4 product-men">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/m7.png" alt="">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+									</div>
+									<span class="product-new-top">New</span>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single">Desert Air Cooler</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$230.00</span>
+											<del>$280.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Desert Air Cooler" />
+													<input type="hidden" name="amount" value="230.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 product-men mt-md-0 mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/m8.png" alt="">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single_2" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single_2">Auto Washing Machine</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$180.00</span>
+											<del>$200.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Washing Machine" />
+													<input type="hidden" name="amount" value="180.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 product-men mt-md-0 mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/m9.png" alt="">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single">Water Purifier</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$199.00</span>
+											<del>$299.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Water Purifier" />
+													<input type="hidden" name="amount" value="199.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //fourth section -->
+					<!-- 5th section -->
+					<div class="product-sec1 px-lg-4 mt-5">
+						<div class="row">
+							<div class="col-md-4 product-men">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/mk8.png" alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single">Panasonic Tab 8</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$499.00</span>
+											<del>$599.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Panasonic Tab 8" />
+													<input type="hidden" name="amount" value="499.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 product-men mt-md-0 mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/mk7.png" alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single">Lenovo Yoga Tab</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$599.00</span>
+											<del>$699.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Lenovo Yoga Tab" />
+													<input type="hidden" name="amount" value="599.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 product-men mt-md-0 mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src="/static/images/mk9.png" alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/single" class="link-product-add-cart">Quick
+													View</a>
+											</div>
+										</div>
+										<span class="product-new-top">New</span>
+									</div>
+									<div class="item-info-product text-center mt-2">
+										<h4 class="pt-1">
+											<a href="/single">Samsung Galaxy Tab</a>
+										</h4>
+										<div class="info-product-price">
+											<span class="item_price">$699.00</span>
+											<del>$899.00</del>
+										</div>
+										<div
+											class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="Samsung Galaxy Tab" />
+													<input type="hidden" name="amount" value="699.00" />
+													<input type="hidden" name="discount_amount" value="1.00" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart"
+														class="btn btn-style btn-style-secondary mt-3" />
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 5th section -->
 				</div>
 			</div>
 			<!-- //product left -->
