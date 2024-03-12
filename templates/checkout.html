@@ -1068,7 +1068,7 @@ RIGHT SIDEBAR TOGGLE SECTION
 			<div class="container py-md-5 py-4">
 				<div class="checkout-right">
 					<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
-						<span>3 Products</span>
+						<span>{{count}} Products</span>
 					</h4>
 					<div class="table-responsive">
 						<table class="timetable_sub">
@@ -1103,9 +1103,9 @@ RIGHT SIDEBAR TOGGLE SECTION
 									<td class="invert">{{add_item.Product_Id.Product_Price}} Rs</td>
 									<td class="invert">{{add_item.Total_Amount}} Rs</td>
 									<td class="invert">
-										<div class="rem">
-											<div class="close1"> </div>
-										</div>
+										<a href="/delete_cart/{{add_item.id}}"><div class="rem">
+											<div class="close1"></div>
+										</div></a>
 									</td>
 								</tr>
 								{% endfor %}

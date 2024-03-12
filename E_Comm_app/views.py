@@ -6,9 +6,8 @@ from django.contrib import messages
 
 
 def home(request):
-    context=header(request)     
+    context = header(request)
 
-    
     return render(request, "index.html", context)
 
 
@@ -134,27 +133,27 @@ def add_to_cart(request):
     try:
         cartdata = Cart.objects.get(Product_Id=pid, Order_id=0, Cart_Status="Pending")
 
-        cartdata.Cart_Quantity=float(cartdata.Cart_Quantity)+quantity
-        cartdata.Total_Amount=float(cartdata.Total_Amount)+totalprice
+        cartdata.Cart_Quantity = float(cartdata.Cart_Quantity) + quantity
+        cartdata.Total_Amount = float(cartdata.Total_Amount) + totalprice
         cartdata.save()
-        messages.success(request,'Cart Updated Successfully')
+        messages.success(request, "Cart Updated Successfully")
     except:
         insertcartdata = Cart(
-        User_Id=User(id=login_id),
-        Product_Id=Product(id=pid),
-        Cart_Quantity=quantity,
-        Total_Amount=totalprice,
-        Order_id=0,
-        Cart_Status="Pending",
-    )
+            User_Id=User(id=login_id),
+            Product_Id=Product(id=pid),
+            Cart_Quantity=quantity,
+            Total_Amount=totalprice,
+            Order_id=0,
+            Cart_Status="Pending",
+        )
         insertcartdata.save()
         messages.success(request, "Product add in Cart successfully")
     return redirect(home)
 
 
 def about(request):
-    context=header(request)   
-    return render(request, "about.html",context)
+    context = header(request)
+    return render(request, "about.html", context)
 
 
 def blog(request):
@@ -166,15 +165,23 @@ def blog_single(request):
 
 
 def checkout(request):
-    context=header(request)
-    login_id=request.session['u_id']   
-    add_cart=Cart.objects.filter(User_Id=login_id,Cart_Status='Pending')
-    context.update({
-        "checkout":add_cart
-    })
-    return render(request, "checkout.html",context)
-def delete_cart(request,pid):
-    pass
+    context = header(request)
+    login_id = request.session["u_id"]
+    add_cart = Cart.objects.filter(User_Id=login_id, Cart_Status="Pending")
+    count=add_cart.count()
+    context.update({"checkout": add_cart,"count":count})
+    return render(request, "checkout.html", context)
+
+def delete_cart(request, pid):
+    try:
+        cart_item = Cart.objects.get(id=pid)
+        cart_item.delete()
+        messages.success(request, "Product removed from cart successfully")
+    except Cart.DoesNotExist:
+        messages.error(request, "Product not found in cart")
+    return redirect(checkout)
+
+
 def contact(request):
     return render(request, "contact.html")
 

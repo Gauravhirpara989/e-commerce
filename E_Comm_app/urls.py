@@ -18,6 +18,7 @@ urlpatterns = [
     path('blog/',views.blog),
     path('blog_single/',views.blog_single),
     path('checkout/',views.checkout),
+    path('delete_cart/<int:pid>',views.delete_cart),
     path('contact/',views.contact),
     path('faqs/',views.faq),
     path('help/',views.help),
