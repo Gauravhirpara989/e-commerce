@@ -6,17 +6,29 @@ from django.contrib import messages
 
 
 def home(request):
-    # slider = Slider.objects.all()
+    context=header(request)     
 
-    # context = {"slider": slider}
-    # print(slider)
+    
+    return render(request, "index.html", context)
 
+
+def header(request):
     main_category = Main_Category.objects.all()
     category = Category.objects.all()
     sub_category = Sub_Category.objects.all()
+    fetch_product = Product.objects.all()
 
-    context = {"m_category": main_category, "cat": category, "s_category": sub_category}
-    return render(request, "index.html", context)
+    context = {
+        "m_category": main_category,
+        "cat": category,
+        "s_category": sub_category,
+        "Product_data": fetch_product,
+    }
+    return context
+
+
+def footer(request):
+    return render(request, "footer.html")
 
 
 # def home(request):
@@ -55,7 +67,7 @@ def check_login(request):
 
     if query is not None:
         messages.success(request, "Login Successfully")
-        return render(request, "index.html")
+        return redirect(home)
     else:
         messages.info(request, "Account does not exist!! Please sign in")
 
@@ -111,8 +123,38 @@ def Add_product(request):
     return render(request, "Add_product.html")
 
 
+def add_to_cart(request):
+
+    login_id = request.session["u_id"]
+    quantity = float(request.POST.get("quantity"))
+    pid = request.POST.get("pid")
+    price = float(request.POST.get("Product_Price"))
+    totalprice = quantity * price
+
+    try:
+        cartdata = Cart.objects.get(Product_Id=pid, Order_id=0, Cart_Status="Pending")
+
+        cartdata.Cart_Quantity=float(cartdata.Cart_Quantity)+quantity
+        cartdata.Total_Amount=float(cartdata.Total_Amount)+totalprice
+        cartdata.save()
+        messages.success(request,'Cart Updated Successfully')
+    except:
+        insertcartdata = Cart(
+        User_Id=User(id=login_id),
+        Product_Id=Product(id=pid),
+        Cart_Quantity=quantity,
+        Total_Amount=totalprice,
+        Order_id=0,
+        Cart_Status="Pending",
+    )
+        insertcartdata.save()
+        messages.success(request, "Product add in Cart successfully")
+    return redirect(home)
+
+
 def about(request):
-    return render(request, "about.html")
+    context=header(request)   
+    return render(request, "about.html",context)
 
 
 def blog(request):
@@ -124,9 +166,15 @@ def blog_single(request):
 
 
 def checkout(request):
-    return render(request, "checkout.html")
-
-
+    context=header(request)
+    login_id=request.session['u_id']   
+    add_cart=Cart.objects.filter(User_Id=login_id,Cart_Status='Pending')
+    context.update({
+        "checkout":add_cart
+    })
+    return render(request, "checkout.html",context)
+def delete_cart(request,pid):
+    pass
 def contact(request):
     return render(request, "contact.html")
 
@@ -159,8 +207,9 @@ def product_2(request):
     return render(request, "product2.html")
 
 
-def single(request):
-    return render(request, "single.html")
+def single(request, pid):
+    fetch_product_details = Product.objects.get(id=pid)
+    return render(request, "single.html", {"Product_data": fetch_product_details})
 
 
 def single_2(request):

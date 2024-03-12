@@ -217,6 +217,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  height:90px;
 }
 
 svg {

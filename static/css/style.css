@@ -2185,6 +2185,9 @@ td.invert-image a img {
     width: 30%;
     margin: 0 auto;
 }
+td .invert-image{
+    height: 60px;
+}
 
 .rem {
     position: relative;

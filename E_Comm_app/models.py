@@ -126,12 +126,13 @@ class Product(models.Model):
 
 class Cart(models.Model):
 
-    cart_status = (("0", "Confirm"), ("1", "Pending"))
+    cart_status = (("Confirm", "Confirm"), ("Pending", "Pending"))
 
     User_Id = models.ForeignKey(User, on_delete=models.CASCADE)
     Product_Id = models.ForeignKey(Product, on_delete=models.CASCADE)
     Cart_Quantity = models.IntegerField()
     Total_Amount = models.FloatField(null=True)
+    Order_id=models.IntegerField(null=True)
     Cart_Status = models.CharField(max_length=20, choices=cart_status,null=True)
 
 
@@ -141,7 +142,7 @@ class Order(models.Model):
 
     User_Id = models.ForeignKey(User, on_delete=models.CASCADE)
     Cart_Id = models.ForeignKey(Cart, on_delete=models.CASCADE)
-    Payment_Method = models.CharField(max_length=20)
+    # Payment_Method = models.CharField(max_length=20)
     Total_Amount = models.FloatField()
     Oreder_Status = models.CharField(max_length=10, choices=order_status)
 
@@ -161,7 +162,9 @@ class Payment(models.Model):
     User_Id = models.ForeignKey(User, on_delete=models.CASCADE)
     Order_Id = models.ForeignKey(Order, on_delete=models.CASCADE)
     Total_Amount = models.IntegerField()
+    Payment_Type=models.CharField(max_length=25,null=True)
     Payment_Status = models.CharField(max_length=15, choices=payment_status)
+    Payment_Datetime=models.DateTimeField(auto_now=True,null=True)
 
 
 class FeedBack(models.Model):
@@ -185,3 +188,21 @@ class Wishlist(models.Model):
     User_id = models.ForeignKey(User, on_delete=models.CASCADE)
     Product_Id = models.ForeignKey(Product, on_delete=models.CASCADE)
     Create_Date = models.DateField()
+
+class Store(models.Model):
+
+    S_status=(
+        ('Active','Active'),
+        ('Inactive','Inactive')
+    )
+    Name=models.CharField(max_length=100)
+    Email=models.EmailField()
+    Password = models.CharField(max_length=50)
+    Phone=models.IntegerField()
+    Store_Status=models.CharField(max_length=20,choices=S_status)
+
+class Inquiry(models.Model):
+    User_Id=models.ForeignKey(User, on_delete=models.CASCADE)
+    TimeStamp=models.DateTimeField(auto_now=True)
+    Message=models.TextField()
+

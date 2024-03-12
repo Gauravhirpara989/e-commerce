@@ -88,7 +88,7 @@ admin.site.register(Product, Product_info)
 
 
 class Cart_info(admin.ModelAdmin):
-    list_display = ["User_Id", "Product_Id", "Cart_Quantity","Total_Amount","Cart_Status"]
+    list_display = ["User_Id", "Product_Id", "Cart_Quantity","Total_Amount","Cart_Status","Order_id"]
 
 
 admin.site.register(Cart, Cart_info)
@@ -98,7 +98,6 @@ class Order_info(admin.ModelAdmin):
     list_display = [
         "User_Id",
         "Cart_Id",
-        "Payment_Method",
         "Total_Amount",
         "Oreder_Status",
     ]
@@ -135,5 +134,14 @@ class Complain_info(admin.ModelAdmin):
 admin.site.register(Complain, Complain_info)
 
 
-class Wishlist(admin.ModelAdmin):
+class Wishlist_info(admin.ModelAdmin):
     list_display = ["User_id", "Product_Id", "Create_Date"]
+admin.site.register(Wishlist,Wishlist_info)
+
+class Store_info(admin.ModelAdmin):
+    list_display=['Name','Email','Password','Phone','Store_Status']
+admin.site.register(Store,Store_info)
+
+class Inquiry_info(admin.ModelAdmin):
+    list_display=['User_Id','TimeStamp','Message']
+admin.site.register(Inquiry,Inquiry_info)

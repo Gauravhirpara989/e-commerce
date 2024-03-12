@@ -12,6 +12,9 @@ urlpatterns = [
     path('m_cat',views.add_main_cat),
     path('cat',views.add_cat),
     path('s_cat',views.add_sub_cat),
+    path('add_to_cart',views.add_to_cart),
+    path('header',views.header),
+    path('footer',views.footer),
     path('blog/',views.blog),
     path('blog_single/',views.blog_single),
     path('checkout/',views.checkout),
@@ -23,7 +26,7 @@ urlpatterns = [
     path('privacy/',views.privacy),
     path('product/',views.product),
     path('product_2/',views.product_2),
-    path('single/',views.single),
+    path('single/<int:pid>',views.single),
     path('single_2',views.single_2),
     path('terms/',views.terms)
 ]

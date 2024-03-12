@@ -1078,39 +1078,38 @@ RIGHT SIDEBAR TOGGLE SECTION
 									<th>Product</th>
 									<th>Quality</th>
 									<th>Product Name</th>
-
 									<th>Price</th>
+									<th>Total Price</th>
 									<th>Remove</th>
 								</tr>
 							</thead>
 							<tbody>
+								{% for add_item in checkout %}
 								<tr class="rem1">
-									<td class="invert">1</td>
+									<td class="invert">{{forloop.counter}}</td>
 									<td class="invert-image">
-										<a href="/single">
-											<img src="/static/images/k1.png" alt=" " class="img-responsive">
-										</a>
+											<img src="/media/{{add_item.Product_Id.Product_Image_1}}" alt=" " class="img-responsive">
 									</td>
 									<td class="invert">
 										<div class="quantity">
 											<div class="quantity-select">
-												<div class="entry value-minus">&nbsp;</div>
-												<div class="entry value">
-													<span>1</span>
-												</div>
-												<div class="entry value-plus active">&nbsp;</div>
+													<span>
+														{{add_item.Cart_Quantity}}
+													</span>
 											</div>
 										</div>
 									</td>
-									<td class="invert">Samsung Galaxy F62</td>
-									<td class="invert">$499.00</td>
+									<td class="invert">{{add_item.Product_Id.Product_Name}}</td>
+									<td class="invert">{{add_item.Product_Id.Product_Price}} Rs</td>
+									<td class="invert">{{add_item.Total_Amount}} Rs</td>
 									<td class="invert">
 										<div class="rem">
 											<div class="close1"> </div>
 										</div>
 									</td>
 								</tr>
-								<tr class="rem2">
+								{% endfor %}
+								{% comment %} <tr class="rem2">
 									<td class="invert">2</td>
 									<td class="invert-image">
 										<a href="/single_2">
@@ -1161,7 +1160,7 @@ RIGHT SIDEBAR TOGGLE SECTION
 											<div class="close3"> </div>
 										</div>
 									</td>
-								</tr>
+								</tr> {% endcomment %}
 							</tbody>
 						</table>
 					</div>
@@ -1170,8 +1169,8 @@ RIGHT SIDEBAR TOGGLE SECTION
 					<div class="address_form_agile mt-sm-5 mt-4">
 						<h4 class="mb-sm-4 mb-3">Add a new Details</h4>
 						<form
-							action="https://p.w3layouts.com/demos_new/template_demo/11-06-2021/electronics-mart-liberty-demo_Free/1081434887/web//payment"
-							method="post" class="creditly-card-form agileinfo_form">
+							action=""
+							method="post" class="creditly-card-form agileinfo_form">{% csrf_token %}
 							<div class="creditly-wrapper wthree, w3_agileits_wrapper">
 								<div class="information-wrapper">
 									<div class="first-row">
